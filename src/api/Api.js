@@ -157,9 +157,15 @@ export const adminLogin = async (email, password) => {
 };
 
 
+// ---------- Role routes -----------
 export const roleList = async () => {
     try {
-        const response = await axios.get(`${SERVER_URL}/api/roles/getall`);
+        const token = localStorage.getItem('token'); // get token from localStorage
+        const response = await axios.get(`${SERVER_URL}/api/roles/getall`, {
+            headers: {
+                'auth-token': token, // add your token here
+            },
+        });
         console.log(response);
         return response.data.data;
     } catch (error) {
@@ -171,7 +177,12 @@ export const roleList = async () => {
 
 export const addRole = async (role) => {
     try {
-        const response = await axios.post(`${SERVER_URL}/api/roles/add`, role);
+        const token = localStorage.getItem('token'); // get token from localStorage
+        const response = await axios.post(`${SERVER_URL}/api/roles/add`, role, {
+            headers: {
+                'auth-token': token, // include token in headers
+            },
+        });
         return response.data;
     } catch (error) {
         console.error("Failed:", error.response?.data || error.message);
@@ -180,21 +191,17 @@ export const addRole = async (role) => {
 };
 
 export const editRole = async () => {
-    try {
-        const response = await axios.post(
-        );
-
-        return response.data;
-    } catch (error) {
-        console.error("Failed:", error.response?.data || error.message);
-        throw error;
-    }
 };
 
 
 export const deleteRole = async (roleId) => {
     try {
-        const response = await axios.delete(`${SERVER_URL}/api/roles/delete/${roleId}`);
+        const token = localStorage.getItem('token'); // get token from localStorage
+        const response = await axios.delete(`${SERVER_URL}/api/roles/delete/${roleId}`, {
+            headers: {
+                'auth-token': token, // include token in headers
+            },
+        });
         return response.data;
     } catch (error) {
         console.error("Delete failed:", error.response?.data || error.message);
@@ -203,21 +210,17 @@ export const deleteRole = async (roleId) => {
 };
 
 export const viewRole = async () => {
-    try {
-        const response = await axios.post(
-        );
-
-        return response.data;
-    } catch (error) {
-        console.error("Failed:", error.response?.data || error.message);
-        throw error;
-    }
 };
 
 // ----------- Staff Apis -----------
 export const staffList = async () => {
     try {
-        const response = await axios.get(`${SERVER_URL}/api/admins/staff/getall`);
+        const token = localStorage.getItem('token'); // get token from localStorage
+        const response = await axios.get(`${SERVER_URL}/api/admins/staff/getall`, {
+            headers: {
+                'auth-token': token, // include token in headers
+            },
+        });
         console.log(response);
         return response.data.data;
     } catch (error) {
@@ -229,7 +232,12 @@ export const staffList = async () => {
 
 export const addStaff = async (staff) => {
     try {
-        const response = await axios.post(`${SERVER_URL}/api/admins/staff/add`, staff);
+        const token = localStorage.getItem('token'); // get token from localStorage
+        const response = await axios.post(`${SERVER_URL}/api/admins/staff/add`, staff, {
+            headers: {
+                'auth-token': token, // include token in headers
+            },
+        });
         return response.data;
     } catch (error) {
         console.error("Failed:", error.response?.data || error.message);
@@ -242,13 +250,6 @@ export const editStaff = async () => {
 
 
 export const deleteStaff = async (roleId) => {
-    try {
-        const response = await axios.delete(`${SERVER_URL}/api/roles/delete/${roleId}`);
-        return response.data;
-    } catch (error) {
-        console.error("Delete failed:", error.response?.data || error.message);
-        throw error;
-    }
 };
 
 export const viewStaff = async () => {

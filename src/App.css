@@ -1,0 +1,86 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+/* Apply to all scrollable elements */
+/* Apply styles to all scrollable elements */
+/* * {
+  scrollbar-width: thin;  
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg); 
+} */
+
+:root {
+  --scrollbar-bg: #FBEDE2; /* Soft Beige */
+  --scrollbar-thumb: #FF9330; /* Highlight Orange */
+  --scrollbar-thumb-hover: #000000; /* Accent Black */
+  --primary: #d37543;
+  --shads: #e2e0e0;
+  --primary:#ffe9d9;
+}
+
+/* Custom Scrollbar for Webkit Browsers (Chrome, Edge, etc.) */
+*::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg); /* Background of the scrollbar track */
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb); /* Color of the scrollbar thumb */
+  border-radius: 100px; 
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #000000; /* Hover state for the thumb */
+}
+
+
+
+
+@font-face {
+  font-family: "DM_Sans";
+  src: url("../font/DM_Sans/DMSans-VariableFont_opsz,wght.ttf");
+}
+
+@font-face {
+  font-family: "Lilita_One";
+  src: url("../font/Lilita_One/LilitaOne-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Neuton_Bold";
+  src: url("../font/Neuton/Neuton-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../font/Poppins/Poppins-Light.ttf");
+}
+
+@font-face {
+  font-family: "Syne";
+  src: url("../font/Syne/Syne-VariableFont_wght.ttf");
+}
+
+.font-Syne {
+  font-family: "Syne", sans-serif;
+}
+.font-DM_Sans {
+  font-family: "DM_Sans", sans-serif;
+}
+
+.font-Neuton_Bold {
+  font-family: "Neuton_Bold", sans-serif;
+}
+
+.font-Poppins {
+  font-family: "Poppins", sans-serif;
+}
+.font-Lilita_One {
+  font-family: "Lilita_One", sans-serif;
+}
+ 
